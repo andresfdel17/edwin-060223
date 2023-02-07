@@ -4,3 +4,7 @@
 
 Creación de ejercicio de notas y despliegue en github pages
 [App](https://andresfdel17.github.io/edwin-060223/)
+
+### Notas
+
+Aun no se termina el ejercicio y no se ha desplegado, está pendiente de validaciones para despliegue
