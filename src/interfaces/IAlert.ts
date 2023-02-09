@@ -1,8 +1,9 @@
+import { INotes } from "./IInputNota";
+
 export interface IAlertProps {
-    note: number;
-    less: number;
+    savedNotes: INotes[];
     emptyNotes: number;
-    setLess: React.Dispatch<React.SetStateAction<number>>;
+    note: number;
 }
 
 export interface Idefaults {

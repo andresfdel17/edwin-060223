@@ -4,7 +4,7 @@ export interface INotes {
 }
 
 export interface IInputNotaProps {
-    defaultV: number;
+    defaultV: INotes;
     setNotes: React.Dispatch<React.SetStateAction<INotes[]>>;
     LoopKey: number;
 }

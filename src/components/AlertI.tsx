@@ -24,34 +24,33 @@ const defaults: Idefaults[] = [
         message: "honores"
     },
 
-]
+];
 export const AlertI = (props: IAlertProps) => {
-    const { note: nota, emptyNotes } = props;
-    const [variant, setVariant] = useState<string>("primary");
-    const [text, setText] = useState<string>("");
-    const [messages, setMessages] = useState<string[]>([]);
+    const { note: nota, emptyNotes, savedNotes } = props;
+    const [messages, setMessages] = useState<string[]>();
     useEffect(() => {
-        console.log(nota, emptyNotes)
-        setAlmostMessage();
-    },[]);
-    const setMessage = (message: string) => {
-        switch (true) {
-            case (message === "perdido"):
-               
-                break;
+        Messages();
+    }, [emptyNotes]);
+    const Messages = () => {
+        if (emptyNotes === 1) {
+            const lessMessage = defaults.filter((value) => value.min >= nota);
+            console.log(lessMessage);
         }
+    }
 
+    const returnMessage = (field: string, empty: boolean, nota: number) => {
+        if(empty) return {
+            perdido: "Haz perdido la asignatura, pero tienes oportunidad de recuperar"
+        }
     }
-    const setAlmostMessage = () => {
-        const compare = defaults.filter((value) => value.min <= nota && value.max >= nota);
-        console.log(compare);
-    }
+
     return (
-        <Alert variant={variant}>
+        <>
             {
-                text
+                emptyNotes <= 1 && (
+                    <Alert />
+                )
             }
-            
-        </Alert>
+        </>
     )
 }
