@@ -10,4 +10,9 @@ export interface Idefaults {
     min: number;
     max: number;
     message: string;
+    variant: string;
+}
+
+export interface IMessage {
+    [key: string]: string;
 }

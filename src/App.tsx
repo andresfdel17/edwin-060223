@@ -51,8 +51,7 @@ function App() {
         showConfirmButton: false
       });
     }
-    const nota = calculateNote();
-    console.log(nota);
+    calculateNote();
   }
   const calculateNote = () => {
     let nota = 0;
